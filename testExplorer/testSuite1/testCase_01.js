@@ -2,11 +2,12 @@ const { postMethod, getAllObjectsMethod } = require("../apiServer/apiObject") //
 
 describe("API Automation Testing", function(){
     let id 
-    //Post Method Test
+    //Post test case
     it("Add an object", async function(){
         id = await postMethod()
     })
-    it("Get All objects", async function(){
+    //Get all object test case
+    it("Get all objects", async function(){
         await getAllObjectsMethod()
     })
 })

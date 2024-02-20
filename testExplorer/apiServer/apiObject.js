@@ -34,6 +34,7 @@ async function postMethod(){
 //get testing function
 async function getAllObjectsMethod(){
     const response = await request(url).get("objects")
+    expect(response.status).to.equal(200)
 
 }
 
