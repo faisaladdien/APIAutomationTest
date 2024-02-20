@@ -93,4 +93,13 @@ async function patchMethod(id){
     })
 }
 
-module.exports = {postMethod, getAllObjectsMethod, getAnObjectMethod, putMethod, patchMethod}
+//Delete testing function
+async function deleteMethod(id){
+    const response = await request(url).delete(`objects/${id}`)
+    //Asertation
+    expect(response.status).to.equal(200)
+    expect(response.body.message).to.equal(`Object with id = ${id} has been deleted.`)
+    
+}
+
+module.exports = {postMethod, getAllObjectsMethod, getAnObjectMethod, putMethod, patchMethod, deleteMethod}
