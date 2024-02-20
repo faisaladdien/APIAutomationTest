@@ -10,6 +10,7 @@ describe("API Automation Testing", function(){
     it("Get all objects", async function(){
         await getAllObjectsMethod()
     })
+    //Get an object test case
     it ("Get an object", async function(){
         await getAnObjectMethod(id)
     })
