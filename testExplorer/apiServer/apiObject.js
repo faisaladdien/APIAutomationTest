@@ -76,7 +76,21 @@ async function putMethod(id){
         "CPU model": "Intel Core i9 13980HX",
         "Hard disk size": "1 TB SSD"
     }) 
-    
 }
 
-module.exports = {postMethod, getAllObjectsMethod, getAnObjectMethod, putMethod}
+//Patch testing function
+async function patchMethod(id){
+    const response = await request(url).patch(`objects/${id}`)
+    .send({
+        "data": {
+           "price": 26500000,
+        }
+     })
+     //Assertation
+     expect(response.status).to.equal(200)
+     expect(response.body.data).to.deep.equal({
+        "price": 26500000
+    })
+}
+
+module.exports = {postMethod, getAllObjectsMethod, getAnObjectMethod, putMethod, patchMethod}
