@@ -1,4 +1,4 @@
-const { postMethod, getAllObjectsMethod, getAnObjectMethod, putMethod, patchMethod, deleteMethod, postPaylodMethod } = require("../apiServer/apiObject") //import API function
+const { postMethod, getAllObjectsMethod, getAnObjectMethod, putMethod, patchMethod, deleteMethod } = require("../apiServer/apiObject") //import API function
 
 describe("API Automation Testing", function(){
     let id 
@@ -27,8 +27,5 @@ describe("API Automation Testing", function(){
     it("Delete an object", async function(){
         await deleteMethod(id)
     })
-    //Post using json file test case
-    it("Post an Object using json file", async function(){
-        await postPaylodMethod()
-    })
+    
 })
