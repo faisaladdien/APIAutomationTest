@@ -1,4 +1,4 @@
-![image](https://github.com/faisaladdien/APIAutomationTest/assets/56010789/4d4de4ac-220f-4ed0-80de-f553902467e8)﻿# API Automation Test
+# API Automation Test
 
 ## This API automation test is using Supertest and Mochawesome Report
 
