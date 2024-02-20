@@ -1,8 +1,8 @@
 # API Automation Test
 
-## This API automation test is using Supertest and Mochawesome Report
+### This API automation test is using Supertest and Mochawesome Report
 
-### How to run this automation if you have never installed Supertest
+### How to run this automation
 1. Project initialization using `npm init -y`
 2. Install dependencies using 
    - `npm install supertest --save-dev`
