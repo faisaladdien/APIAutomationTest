@@ -55,4 +55,28 @@ async function getAnObjectMethod(id){
     }) 
 }
 
-module.exports = {postMethod, getAllObjectsMethod, getAnObjectMethod}
+//put testing function
+async function putMethod(id){
+    const response = await request(url).put(`objects/${id}`)
+    .send({
+        "name": "Acer Predator Helios 17",
+        "data": {
+           "year": 2024,
+           "price": 26000000,
+           "CPU model": "Intel Core i9 13980HX",
+           "Hard disk size": "1 TB SSD"
+        }
+     })
+     //Assertation
+     expect(response.status).to.equal(200)
+     expect(response.body.name).to.equal("Acer Predator Helios 17")
+     expect(response.body.data).to.deep.equal({
+        "year": 2024,
+        "price": 26000000,
+        "CPU model": "Intel Core i9 13980HX",
+        "Hard disk size": "1 TB SSD"
+    }) 
+    
+}
+
+module.exports = {postMethod, getAllObjectsMethod, getAnObjectMethod, putMethod}
