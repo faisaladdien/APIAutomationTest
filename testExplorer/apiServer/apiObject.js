@@ -6,7 +6,6 @@ const url = `${baseURL}`
 
 //post testing function
 async function postMethod(){
-    
     const response = await request(url).post("objects")
     //request body
     .send({
@@ -26,13 +25,16 @@ async function postMethod(){
         "price": 24000000,
         "CPU model": "Intel Core i7 13900HX",
         "Hard disk size": "1 TB SSD"
-    })
+    })  
 
-    console.log(response.body.id)
-     
     const id = response.body.id
-
     return id
 }
 
-module.exports = {postMethod}
+//get testing function
+async function getAllObjectsMethod(){
+    const response = await request(url).get("objects")
+
+}
+
+module.exports = {postMethod, getAllObjectsMethod}
