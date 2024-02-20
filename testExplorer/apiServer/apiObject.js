@@ -104,7 +104,7 @@ async function deleteMethod(id){
 }
 
 //Post testing function using payload json file
-async function postPaylodMethod(){
+async function postPayloadMethod(){
     const response = await request(url).post("objects")
     .send(payload)
     .set('Accept', 'application/json')
@@ -118,4 +118,4 @@ async function postPaylodMethod(){
     })
 }
 
-module.exports = {postMethod, getAllObjectsMethod, getAnObjectMethod, putMethod, patchMethod, deleteMethod, postPaylodMethod}
+module.exports = {postMethod, getAllObjectsMethod, getAnObjectMethod, putMethod, patchMethod, deleteMethod, postPayloadMethod}
