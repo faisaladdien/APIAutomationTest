@@ -1,6 +1,38 @@
-const request = require("supertest")
-const {expect} = require("chai")
-const url = require("../variable/globalVariable")
+const request = require("supertest") //import supertest
+const {expect} = require("chai") //import chai
+const baseURL = require("../variable/globalVariable") //import base url
 
-const baseURL = `${url}`
+const url = `${baseURL}`
 
+//post testing function
+async function postMethod(){
+    
+    const response = await request(url).post("objects")
+    //request body
+    .send({
+        "name": "Acer Predator Helios 16",
+        "data": {
+           "year": 2024,
+           "price": 24000000,
+           "CPU model": "Intel Core i7 13900HX",
+           "Hard disk size": "1 TB SSD"
+        }
+     })
+    //Assertation
+    expect(response.status).to.equal(200)
+    expect(response.body.name).to.equal("Acer Predator Helios 16")
+    expect(response.body.data).to.deep.equal({
+        "year": 2024,
+        "price": 24000000,
+        "CPU model": "Intel Core i7 13900HX",
+        "Hard disk size": "1 TB SSD"
+    })
+
+    console.log(response.body.id)
+     
+    const id = response.body.id
+
+    return id
+}
+
+module.exports = {postMethod}

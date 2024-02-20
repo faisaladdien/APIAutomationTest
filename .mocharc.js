@@ -1,5 +1,5 @@
 module.exports ={
-    spec : "testExplorer/*.js",
-    timeout : 5000,
+    spec : "testExplorer/testSuite1/*.js",
+    timeout : 10000,
     reporter : "spec"
 }
