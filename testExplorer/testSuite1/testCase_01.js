@@ -1,4 +1,4 @@
-const { postMethod, getAllObjectsMethod } = require("../apiServer/apiObject") //import API function
+const { postMethod, getAllObjectsMethod, getAnObjectMethod } = require("../apiServer/apiObject") //import API function
 
 describe("API Automation Testing", function(){
     let id 
@@ -9,5 +9,8 @@ describe("API Automation Testing", function(){
     //Get all object test case
     it("Get all objects", async function(){
         await getAllObjectsMethod()
+    })
+    it ("Get an object", async function(){
+        await getAnObjectMethod(id)
     })
 })
