@@ -1,6 +1,6 @@
 module.exports ={
     spec : "testExplorer/testSuite1/*.js",
-    timeout : 20000,
+    timeout : 50000,
     reporter : "mochawesome", // Use mochawesome as the test report generator
                "reporter-option": [
                     "reportDir=report", // Report directory

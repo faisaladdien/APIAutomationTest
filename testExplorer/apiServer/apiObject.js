@@ -106,9 +106,9 @@ async function deleteMethod(id){
 //Post testing function using payload json file
 async function postPayloadMethod(){
     const response = await request(url).post("objects")
-    .send(payload)
     .set('Accept', 'application/json')
     .set('Content-Type', 'application/json')
+    .send(payload)
 
     expect(response.status).to.equal(200)
     expect(response.body.name).to.equal("Acer Predator Helios 16")
